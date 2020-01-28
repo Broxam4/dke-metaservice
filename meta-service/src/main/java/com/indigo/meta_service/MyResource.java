@@ -172,14 +172,14 @@ public class MyResource {
 		if (uni == null)
 			uni = "both";
 		System.out.println(
-				String.format("-%s- GetCoursescalled: %s; %s; %s; %s; %s", uni, coursetype, name, courseId, ects, lector));
+				String.format("-%s- GetCourses called: %s; %s; %s; %s; %s", uni, coursetype, name, courseId, ects, lector));
 		List<Course> courses = new ArrayList<>();
 		switch (uni) {
 		case "wu":
 			courses.addAll(wuGetCourse(resolveCourseType(coursetype, "wu"), name, courseId, ects, lector));
 			break;
 		case "jku":
-			courses.addAll(jkuGetCourse(resolveCourseType(coursetype, "wu"), name, courseId, ects, lector));
+			courses.addAll(jkuGetCourse(resolveCourseType(coursetype, "jku"), name, courseId, ects, lector));
 			break;
 		case "both":
 			courses.addAll(wuGetCourse(resolveCourseType(coursetype, "wu"), name, courseId, ects, lector));
